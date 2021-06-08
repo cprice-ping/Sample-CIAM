@@ -13,11 +13,18 @@
 # console and API runs. Default is 9999.
 pf.admin.https.port=
 
+# This property defines the URL that PingFederate's administrative node will use
+# to populate resource references in Administrative API responses
+# and for the redirect URL the node will send to an OP for administrator OIDC login
+# (for example, https://pingfederate-admin.example.com or, if the load balancer uses
+# a custom port, https://pingfederate-admin.example.com:8443).
 #
-# This property defines the host name of this machine that will be used in
-# PingFederate's administrative API to represent itself to clients.
-# If left empty, PingFederate will do a name lookup to find its name.
-pf.admin.hostname=
+# This property should be used because pf.admin.hostname has been deprecated.
+# If pf.admin.hostname is defined in run.properties, it will be ignored
+# if pf.admin.baseurl is specified. But if only pf.admin.hostname is defined,
+# then the URL will be constructed the same way as in versions of PingFederate
+# before 10.3.
+pf.admin.baseurl=https://${ENVIRONMENT_NAME}.${DOMAIN_NAME}
 
 #
 # This property defines the IP address over which the PingFederate 
@@ -397,3 +404,6 @@ javax.net.ssl.sessionCacheSize=5000
 # This property determines whether PingFederate omits line breaks in XML digital signatures. If omitted, this setting defaults to "false".
 # It is recommended to set this as "true" for improved interoperability with Microsoft products.
 org.apache.xml.security.ignoreLineBreaks=true
+
+# Disable BCFIPS
+org.bouncycastle.fips.approved_only=false
