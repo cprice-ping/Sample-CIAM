@@ -406,4 +406,4 @@ javax.net.ssl.sessionCacheSize=5000
 org.apache.xml.security.ignoreLineBreaks=true
 
 # Disable BCFIPS
-org.bouncycastle.fips.approved_only=false
+#org.bouncycastle.fips.approved_only=false
