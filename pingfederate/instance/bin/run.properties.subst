@@ -11,13 +11,13 @@
 #
 # This property defines the port on which the PingFederate administrative 
 # console and API runs. Default is 9999.
-pf.admin.https.port=${PF_ADMIN_PORT}
+pf.admin.https.port=
 
 #
 # This property defines the host name of this machine that will be used in
 # PingFederate's administrative API to represent itself to clients.
 # If left empty, PingFederate will do a name lookup to find its name.
-pf.admin.hostname=${PF_ADMIN_HOSTNAME}
+pf.admin.hostname=
 
 #
 # This property defines the IP address over which the PingFederate 
