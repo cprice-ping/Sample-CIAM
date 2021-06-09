@@ -414,3 +414,6 @@ pa.cluster.serverstate.replicationIntervalMilliseconds=1000
 
 # mbean settings
 pa.mbean.site.connection.pool.enable=false
+
+# Disable BCFIPS
+org.bouncycastle.fips.approved_only=false
