@@ -11,7 +11,7 @@
 #
 # This property defines the port on which the PingFederate administrative 
 # console and API runs. Default is 9999.
-pf.admin.https.port=
+# pf.admin.https.port=
 
 # This property defines the URL that PingFederate's administrative node will use
 # to populate resource references in Administrative API responses
