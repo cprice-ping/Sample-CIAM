@@ -115,6 +115,13 @@
                 "keyPairId": 1,
                 "useServerCipherSuiteOrder": true,
                 "restartRequired": false
+            },
+            {
+                "id": 5,
+                "name": "SIDEBAND",
+                "keyPairId": 1,
+                "useServerCipherSuiteOrder": true,
+                "restartRequired": false
             }
         ],
         "keyPairs": [
