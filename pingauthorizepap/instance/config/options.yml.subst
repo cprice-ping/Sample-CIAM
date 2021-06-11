@@ -58,8 +58,8 @@ deploymentPackageStores:
       prefix: 8.3.0.0-GA-FAT
       endpoint: https://s3.amazonaws.com
       region: us-west-2
-      accessKey: AKIA2IO25QZR67A3R4UQ
-      secretKey: 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
+      accessKey: ${pazDeployKey}
+      secretKey: ${pazDeploySecret}
   
 securityHeaders:
   # Configure the values that the Policy Administration GUI will set in its
