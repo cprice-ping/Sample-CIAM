@@ -50,7 +50,7 @@ is not recommended as it may interfere with expected server behavior.
         <div class="page__content">
             <div class="card card--no-padding">
                 <div class="card__content">
-                    #if($allowChangeDevice == true && $devices.size() > 1)
+                    #if( ($allowChangeDevice == true && $devices.size() > 1) || ($allowChangeDevice == true && $devices.size() == 1 && $manualPairing == true))
                     <div class="step-link step-link--back" style="margin: 0; text-align: left;">
                         <div style="margin: 0; text-align: left;">
                             <button class="button pf-back-button" onclick="unselectDevice()"><span
@@ -61,19 +61,29 @@ is not recommended as it may interfere with expected server behavior.
                     <div class="org-logo"><img class="org-logo__image"
                                                src="assets/images/ping-logo.svg"
                                                alt="Company Logo"/></div>
+                    <div class="stack stack--small" data-id="stack">
+                        <h1 class="heading-text centered-text icon-heading" data-id="heading">
+                            <svg viewBox="0 0 24 24" role="presentation" style="width: 32px; height: 32px;">
+                                <path
+                                        d="M16,18H7V4H16M11.5,22A1.5,1.5 0 0,1 10,20.5A1.5,1.5 0 0,1 11.5,19A1.5,1.5 0 0,1 13,20.5A1.5,1.5 0 0,1 11.5,22M15.5,1H7.5A2.5,2.5 0 0,0 5,3.5V20.5A2.5,2.5 0 0,0 7.5,23H15.5A2.5,2.5 0 0,0 18,20.5V3.5A2.5,2.5 0 0,0 15.5,1Z"
+                                        style="fill: rgb(61, 69, 77);"
+                                />
+                            </svg><span style="margin-left: .5em">$languagePackMessages.getMessage($messageKeyPrefix,"header")</span>
+                        </h1>
+                    </div>
                     <div class="ping-body-container" style="min-height: auto;">
                         <div class="spinner spinner--margin-bottom-small">
                             <div class="spinner__icon" data-id="spinner"></div>
                         </div>
                     </div>
                     <div class="icon-feedback icon-feedback--success" style="margin-bottom: 10px;">
-                        <p class="icon-feedback__label">$languagePackMessages.getMessage($messageKeyPrefix, "header")</p>
+                        <p class="icon-feedback__label">$languagePackMessages.getMessage($messageKeyPrefix, "message")</p>
                     </div>
                     <div class="form-aside">
                         <p class="text-block text-block--small"  style="margin-bottom: 5px;">
                             <span class="text-block__text">$languagePackMessages.getMessage($messageKeyPrefix, "request.sent.title")</span>
                         </p>
-                        <p class="text-block text-block--large">
+                        <p class="text-block">
                             <span class="text-block__text">$selectedDevice.name</span>
                         </p>
                     </div>

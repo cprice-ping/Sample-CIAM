@@ -49,7 +49,7 @@ is not recommended as it may interfere with expected server behavior.
         <div class="page__content">
             <div class="card card--no-padding">
                 <div class="card__content">
-                    #if($allowChangeDevice == true && $devices.size() > 1)
+                    #if( ($allowChangeDevice == true && $devices.size() > 1) || ($allowChangeDevice == true && $devices.size() == 1 && $manualPairing == true))
                     <div class="step-link step-link--back" style="margin: 0; text-align: left;">
                         <div style="margin: 0; text-align: left;">
                             <button class="button pf-back-button" onclick="unselectDevice()"><span
@@ -74,7 +74,7 @@ is not recommended as it may interfere with expected server behavior.
                         </p>
                         #set ($deviceMessageKey = ${selectedDevice.type.toLowerCase()})
                         #set( $deviceMessageKeyPrefix = "${deviceMessageKey}.$messageKeyPrefix" )
-                        <p class="text-block text-block--large">
+                        <p class="text-block">
                             <span class="text-block__text">$languagePackMessages.getMessage($deviceMessageKeyPrefix, "method")</span>
                         </p>
                     </div>

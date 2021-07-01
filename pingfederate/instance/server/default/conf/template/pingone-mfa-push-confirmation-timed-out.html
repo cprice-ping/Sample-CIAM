@@ -42,7 +42,7 @@
     <div class="page__content">
       <div class="card card--no-padding">
         <div class="card__content">
-            #if($allowChangeDevice == true && $devices.size() > 1)
+            #if( ($allowChangeDevice == true && $devices.size() > 1) || ($allowChangeDevice == true && $devices.size() == 1 && $manualPairing == true))
             <div class="step-link step-link--back" style="margin: 0; text-align: left;">
                 <div style="margin: 0; text-align: left;">
                     <button class="button pf-back-button" onclick="unselectDevice()"><span
@@ -62,8 +62,14 @@
             </div>
             #end
                     <div class="stack stack--small" data-id="stack">
-                        <h1 class="heading" data-id="heading">$languagePackMessages.getMessage($messageKeyPrefix,
-                            "otp.header")</h1>
+                        <h1 class="heading-text centered-text icon-heading" data-id="heading">
+                            <svg viewBox="0 0 24 24" role="presentation" style="width: 32px; height: 32px;">
+                                <path
+                                        d="M16,18H7V4H16M11.5,22A1.5,1.5 0 0,1 10,20.5A1.5,1.5 0 0,1 11.5,19A1.5,1.5 0 0,1 13,20.5A1.5,1.5 0 0,1 11.5,22M15.5,1H7.5A2.5,2.5 0 0,0 5,3.5V20.5A2.5,2.5 0 0,0 7.5,23H15.5A2.5,2.5 0 0,0 18,20.5V3.5A2.5,2.5 0 0,0 15.5,1Z"
+                                        style="fill: rgb(61, 69, 77);"
+                                />
+                            </svg><span style="margin-left: .5em">$languagePackMessages.getMessage($messageKeyPrefix,"otp.header")</span>
+                        </h1>
                         <div class="text-block" data-id="textblock">
                         <div class="text-block--overflow-wrap">
                             $languagePackMessages.getMessage($messageKeyPrefix, "message")
