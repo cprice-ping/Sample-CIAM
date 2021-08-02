@@ -1,3 +1,5 @@
+[Aug 2021] This Profile has been deprecated. New development is happening in [Project Facile](https://github.com/cprice-ping/Project-Facile)
+
 # Sample CIAM stack
 
 This repo provides a sample CIAM configuration for PingDirectory \ PingFederate \ PingDataSync \ PingOne MFA
